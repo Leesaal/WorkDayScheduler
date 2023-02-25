@@ -5,20 +5,32 @@
 
 // set variables
 
-dayjs().format('Q Do k kk X x')
 var currentDateEl = document.getElementById("currentDay");
 var now = dayjs();
 var currentTime = now.format("HH");
-console.log(currentTime);
 
 
 // show current date
 
 currentDateEl.innerText = now.format("dddd, MMMM Do");
 
+$(".timeContainer").children().each(function () {
+  // create variable to = hour in id
+  var timeContainer = $(this).attr("id").split("-")[1];
 
-$(".container-fluid").each(function () {
-  
+  if (currentTime === timeContainer) {
+    $(this).addClass("present");
+    $(this).children(".description").addClass("present");
+  } else if (currentTime < timeContainer) {
+     $(this).removeClass("present");
+      $(this).addClass("future"); 
+  } else if (currentTime > timeContainer) {
+    $(this).removeClass("future");
+    $(this).addClass("past");
+  }
+
+});
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -37,4 +49,3 @@ $(".container-fluid").each(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
