@@ -1,7 +1,24 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+
+
+// set variables
+
+dayjs().format('Q Do k kk X x')
+var currentDateEl = document.getElementById("currentDay");
+var now = dayjs();
+var currentTime = now.format("HH");
+console.log(currentTime);
+
+
+// show current date
+
+currentDateEl.innerText = now.format("dddd, MMMM Do");
+
+
+$(".container-fluid").each(function () {
+  
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
