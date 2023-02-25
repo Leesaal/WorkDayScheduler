@@ -47,18 +47,13 @@ $(".saveBtn").click(function(event) {
 });
 
 
-// get descriptions from local storage when page loads
+// get descriptions from local storage when page loads.
 
 $("#hour-09").children(".description").val(localStorage.getItem("hour-09"));
-$("#hour-10").children(".description").val(localStorage.getItem("hour-10"));
-$("#hour-11").children(".description").val(localStorage.getItem("hour-11"));
-$("#hour-12").children(".description").val(localStorage.getItem("hour-12"));
-$("#hour-13").children(".description").val(localStorage.getItem("hour-13"));
-$("#hour-14").children(".description").val(localStorage.getItem("hour-14"));
-$("#hour-15").children(".description").val(localStorage.getItem("hour-15"));
-$("#hour-16").children(".description").val(localStorage.getItem("hour-16"));
-$("#hour-17").children(".description").val(localStorage.getItem("hour-17"));
 
+for (var i = 10; i < 17; i++) {
+  $("#hour-" + i).children(".description").val(localStorage.getItem("hour-" + i));
+}
 
 
   // TODO: Add a listener for click events on the save button. This code should
