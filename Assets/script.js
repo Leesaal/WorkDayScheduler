@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-
 // set variables
 
 var currentDateEl = document.getElementById("currentDay");
@@ -12,7 +11,7 @@ var currentTime = now.format("HH");
 
 // show current date in header
 
-currentDateEl.innerText = now.format("dddd, MMMM Do");
+currentDateEl.innerText = now.format("dddd, MMMM D");
 
 
 // create function to determine colour of description spaces
