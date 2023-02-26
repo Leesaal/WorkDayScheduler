@@ -37,7 +37,7 @@ There are no tests currently.
 
 ## Limitations
 
-There is currently no option to clear just one 
+There is currently no option to clear just one hours description.  The only function available to clear, is Clear All.
 
 ## Link to page
 
