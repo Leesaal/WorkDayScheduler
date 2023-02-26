@@ -61,8 +61,13 @@ for (var i = 9; i <= 17; i++) {
 
 $("#clearAll").click(function(event) {
   event.preventDefault();
-  $(".description").val("");
+  if (confirm("Are you sure you want to clear all?  Click 'OK' for yes. ")) {
+   $(".description").val("");
   localStorage.clear();
+} else {
+  alert("Nothing has been cleared.");
+}
+ 
 })
 
 
